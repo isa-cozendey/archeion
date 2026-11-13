@@ -1,0 +1,83 @@
+# Critérios de Aceitação do Projeto – Archeion
+
+**Projeto:** Archeion
+**Instituição:** Instituto Federal Catarinense (IFC) – Campus Videira  
+**Versão:** 1.0  
+**Data de Elaboração:** Novembro de 2026  
+
+---
+
+## 1. Objetivo
+
+Estabelecer os critérios objetivos, mensuráveis e verificáveis que deverão ser atendidos para que as entregas do sistema Archeion sejam formalmente validadas e homologadas pelos usuários-chave (Gabinete Institucional, Coordenação de Gestão de Pessoas – CGP e Direção Geral – DG) do IFC – Campus Videira.
+
+---
+
+## 2. Critérios Gerais de Pronto (Definition of Done – DoD)
+
+Para que qualquer módulo ou funcionalidade do sistema seja considerado **concluído**, deverá atender simultaneamente aos seguintes requisitos:
+
+* **Código Versionado e Revisado:** Código-fonte integrado à branch principal do repositório GitHub após revisão (*Pull Request*) entre a equipe (Backend e Frontend).
+* **Conformidade Funcional e de Negócio:** 100% dos Requisitos Funcionais (RF) e Regras de Negócio (RN) vinculados ao módulo operando sem falhas críticas.
+* **Validação Dupla (Frontend + Backend):** Regras de bloqueio e sanidade de dados aplicadas tanto na interface do usuário quanto na API/banco de dados.
+* **Padronização Visual:** Interfaces responsivas e documentos gerados rigorosamente alinhados ao padrão visual dos boletins anuais do IFC (`RNF04`).
+* **Auditoria Registrada:** Ações críticas (criação, edição, aprovação, reprovação, assinatura, retificação e revogação) devidamente gravadas nos logs de rastreabilidade.
+
+---
+
+## 3. Critérios de Aceitação por Módulo e Entrega
+
+### CA-01: Autenticação e Controle de Acesso (RBAC)
+* **CA-01.1:** O login deve ocorrer exclusivamente via autenticação vinculada à base institucional do IFC (`RF01`), bloqueando credenciais inválidas ou inativas.
+* **CA-01.2:** O sistema deve restringir menus, telas e endpoints de API conforme o papel do usuário (`RF02`):
+  * *Requerente* não pode aprovar, emitir ou assinar portarias, nem visualizar relatórios gerenciais restritos.
+  * *Emissor (Gabinete/CGP)* pode triar, cadastrar, editar e tramitar portarias, mas não pode assinar eletronicamente como DG.
+  * *Diretor Geral (DG)* (ou substituto legal formalmente habilitado) é o único perfil autorizado a assinar portarias e acessar o Relatório da Diretoria (`RF05`, `RF13`, `RNF02`).
+  * *Consultor* possui acesso estritamente de leitura às informações autorizadas.
+
+### CA-02: Ciclo de Vida e Tramitação da Portaria
+* **CA-02.1:** O fluxo completo (*Solicitação $\rightarrow$ Triagem/Emissão $\rightarrow$ Assinatura DG $\rightarrow$ Publicação SIPAC*) deve operar de ponta a ponta sem perda de dados (`RF03` a `RF06`).
+* **CA-02.2:** Uma portaria reprovada na triagem pelo Gabinete/CGP deve exigir justificativa e notificar o requerente.
+* **CA-02.3:** Os estados da portaria (*Ativa*, *Vigente*, *Retificada* e *Revogada*) devem ser atualizados automaticamente conforme os eventos do fluxo e datas de vigência (`RNF` - Estados).
+* **CA-02.4:** Portarias com efeito retroativo devem ser bloqueadas caso o campo de justificativa textual esteja vazio (`RN06`).
+
+### CA-03: Cadastro, Preenchimento Automatizado e Sanidade de Dados
+* **CA-03.1:** Ao selecionar um servidor ou discente, o sistema deve preencher automaticamente Nome, SIAPE/Matrícula, Setor e Carga Horária a partir da base institucional (`RF07`), impedindo alteração manual que gere inconsistência (`RNF03`, `RN13`).
+* **CA-03.2:** O sistema deve permitir a associação de uma portaria a um ou mais processos/memorandos e possibilitar o cadastro dinâmico de novas categorias pelo setor emissor (`RF09`).
+
+### CA-04: Aplicação das Regras de Negócio Institucionais
+* **CA-04.1 (Prazos e Vigências):** O sistema deve impedir o salvamento de portarias que ultrapassem os limites legais (`RN01` a `RN05`):
+  * Núcleos (CLA, CPPD, NEABI, NEGES, NGA): máximo de 2 anos.
+  * CIS Local: máximo de 3 anos.
+  * Comissões de Ingresso/Matrícula/PPI: data limite fixada em julho de 2026.
+  * GTs e Bancas: prazo obrigatório de 30, 45 ou 60 dias para entrega de relatório final.
+  * Fiscalização de Contrato: vinculada estritamente à vigência do contrato no SIPAC.
+* **CA-04.2 (Composição e Segregação):** O sistema deve bloquear o mesmo SIAPE atuando simultaneamente como Agente de Contratação e Pregoeiro no mesmo processo (`RN07`), exigir Presidente/Coordenador e Suplente em comissões especiais (`RN08`) e validar cotas discentes quando aplicável (`RN09`).
+* **CA-04.3 (Carga Horária – Nota Técnica 001/2023):** O sistema deve calcular a carga horária acumulada do servidor e bloquear novas inclusões caso excedam os tetos semanais (`RN10` a `RN12`):
+  * Colegiados: teto de $0,5\text{h}$ (30 minutos).
+  * NDEs e CPPD: teto de $1\text{h}$.
+  * Núcleos e GTs: teto entre $4\text{h}$ e $8\text{h}$ conforme a função (membro ou coordenação).
+
+### CA-05: Retificações e Revogações
+* **CA-05.1:** Em caso de **Retificação**, o documento original publicado deve permanecer imutável, gerando um novo registro vinculado com documento auxiliar e histórico preservado (`RF08`, `RN14`).
+* **CA-05.2:** Em caso de **Revogação ou Substituição**, o formulário deve exigir o número da portaria anterior e alterar automaticamente o status da portaria substituída para *Revogada* (`RF08`, `RN15`).
+
+### CA-06: Alertas e Relatórios
+* **CA-06.1:** O motor de alertas deve disparar notificações automáticas antes do vencimento de mandatos, na proximidade do prazo de entrega de relatórios de GTs/bancas e imediatamente quando uma portaria vencer sem substituto (`RF10` a `RF12`).
+* **CA-06.2:** Os relatórios (*Diretoria*, *Contexto do Servidor* e *Por Categorias*) devem exibir dados exatos, permitir exportação/visualização limpa e respeitar rigorosamente os níveis de sigilo (`RF13` a `RF15`, `RNF02`).
+
+### CA-07: Integrações Institucionais (Simulação / Homologação)
+* **CA-07.1:** A comunicação com o **Sistema Interno de Cadastro do IFC** deve sincronizar servidores, discentes e setores sem falhas de mapeamento (`RNF01`).
+* **CA-07.2:** O disparo de portarias assinadas para o **SIPAC** deve transmitir o documento formatado, metadados e número de processo associado com confirmação de recebimento (`RF06`, `RNF01`).
+
+### CA-08: Interfaces Obrigatórias e Artefatos Complementares
+* **CA-08.1:** O sistema deve contemplar, no mínimo, as interfaces obrigatórias: Tela Inicial de Acesso (Login), Tela de Recuperação de Senha e Tela Home com menu dinâmico por perfil.
+* **CA-08.2:** Entrega do Protótipo Funcional Navegável, Landing Page de apresentação institucional e Documentação Técnica e Funcional completa no repositório GitHub.
+
+---
+
+## 4. Processo de Homologação e Aceite Final
+
+1. **Execução dos Testes:** A equipe técnica executará os roteiros de testes funcionais, de regras de negócio e de integração (`KAN-40` a `KAN-45`), registrando e corrigindo eventuais não conformidades.
+2. **Sessão de Homologação (`KAN-46`):** Demonstração guiada e testes assistidos com representantes do **Gabinete Institucional**, **CGP** e **Direção Geral** utilizando cenários reais do Campus Videira.
+3. **Termo de Aceite:** Após a validação de todos os critérios listados na Seção 3 sem pendências impeditivas, os usuários-chave formalizarão o aceite para a implantação em ambiente de produção (`Marco 5`).
