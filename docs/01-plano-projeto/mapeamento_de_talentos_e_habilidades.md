@@ -1,4 +1,4 @@
-# 🧑‍💻 Mapeamento de Talentos e Habilidades – Archeion
+# Mapeamento de Talentos e Habilidades – Archeion
 
 **Projeto:** Archeion (`portarias.gestao`)
 
