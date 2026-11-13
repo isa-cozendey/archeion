@@ -1,6 +1,6 @@
-# 📄 Termo de Abertura do Projeto (TAP)
+# Termo de Abertura do Projeto (TAP)
 
-**Título do Projeto:** Archeion (`portarias.gestao`)  
+**Título do Projeto:** Archeion
 **Instituição:** Instituto Federal Catarinense (IFC) – Campus Videira  
 
 ---
@@ -65,7 +65,7 @@ Desenvolver um sistema para digitalizar, centralizar e controlar o ciclo de vida
 
 ## 3. Descrição do Produto / Entregas
 
-* **Sistema `portarias.gestao`:** destinado ao gerenciamento do ciclo de vida das portarias do IFC – Campus Videira.
+* **Sistema Archeion:** destinado ao gerenciamento do ciclo de vida das portarias do IFC – Campus Videira.
 * **Módulo de autenticação e usuários:** integração com o cadastro institucional do IFC e gerenciamento de perfis e permissões.
 * **Módulo de solicitação:** permite aos servidores solicitar a elaboração de uma nova portaria e informar justificativa, objetivo, participantes, informações específicas e processos relacionados.
 * **Módulo de emissão:** permite ao Gabinete e ao CGP analisar solicitações aprovadas, cadastrar e editar portarias.
