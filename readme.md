@@ -1,4 +1,4 @@
-# 🏛️ Archeion (`portarias.gestao`)
+# Archeion
 
 > **Sistema de Gestão e Automação do Ciclo de Vida de Portarias Institucionais**  
 > Instituto Federal Catarinense (IFC) – Campus Videira
@@ -8,11 +8,11 @@
 
 ---
 
-## 📖 Sobre o Projeto
+## Sobre
 
-O **Archeion** é uma solução de software desenvolvida para digitalizar, centralizar e controlar todo o ciclo de vida das portarias institucionais do **IFC – Campus Videira** — abrangendo desde a solicitação inicial até a assinatura eletrônica, publicação oficial, acompanhamento de vigência, retificações, revogações e arquivamento.
+O Archeion é uma solução de software desenvolvida para digitalizar, centralizar e controlar todo o ciclo de vida das portarias institucionais do IFC – Campus Videira — abrangendo desde a solicitação inicial até a assinatura eletrônica, publicação oficial, acompanhamento de vigência, retificações, revogações e arquivamento.
 
-### 🎯 Objetivos Principais
+### Objetivos Principais
 * **Centralização e Rastreabilidade:** Reunir o histórico completo de portarias, processos associados e alterações em um ambiente único e auditável.
 * **Automação de Validações:** Aplicar regras de negócio institucionais automaticamente (controle de carga horária, segregação de funções, cotas de representação e prazos de mandato).
 * **Redução de Erros Operacionais:** Puxar dados cadastrais de servidores diretamente da base institucional, evitando falhas de digitação (SIAPE, setor, carga horária).
@@ -21,7 +21,7 @@ O **Archeion** é uma solução de software desenvolvida para digitalizar, centr
 
 ---
 
-## 👥 Perfis de Acesso (RBAC)
+## Perfis de Acesso (RBAC)
 
 * **Diretor Geral (DG):** Nível máximo de acesso; realiza a assinatura eletrônica das portarias (incluindo substitutos legais) e acessa relatórios gerenciais sensíveis.
 * **Emissor (Gabinete / CGP):** Realiza a triagem de solicitações, cadastro, edição, validação técnica e tramitação das portarias.
@@ -30,7 +30,7 @@ O **Archeion** é uma solução de software desenvolvida para digitalizar, centr
 
 ---
 
-## 🗂️ Estrutura do Repositório
+## Estrutura do Repositório
 
 ```text
 /archeion
@@ -50,7 +50,7 @@ O **Archeion** é uma solução de software desenvolvida para digitalizar, centr
 
 ---
 
-## 📅 Cronograma de Marcos
+## Cronograma de Marcos
 
 | Marco | Fase | Período Previsto | Status |
 | :--- | :--- | :--- | :--- |
@@ -59,18 +59,6 @@ O **Archeion** é uma solução de software desenvolvida para digitalizar, centr
 | **Marco 3** | Desenvolvimento do Sistema | A definir | ⏳ Pendente |
 | **Marco 4** | Integração (IFC / SIPAC) e Homologação | A definir | ⏳ Pendente |
 | **Marco 5** | Implantação e Encerramento | A definir | ⏳ Pendente |
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-*(Atualizar conforme a definição final da arquitetura no Marco 2)*
-
-* **Frontend:** `[Ex: Vue.js / React / HTML5 & CSS3]`
-* **Backend:** `[Ex: Java Spring Boot / Node.js / Python]`
-* **Banco de Dados:** `[Ex: PostgreSQL / MySQL]`
-* **Prototipação & Design:** Figma
-* **Integrações:** APIs Institucionais IFC & SIPAC
 
 ---
 
