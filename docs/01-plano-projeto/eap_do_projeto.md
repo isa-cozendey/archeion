@@ -63,7 +63,7 @@
 
 ---
 
-## 📋 Dicionário da EAP e Cronograma Detalhado
+##  Dicionário da EAP e Cronograma Detalhado
 
 ### Pacote 1.1 – Levantamento e Validação de Requisitos (`KAN-8`)
 **Período:** Março/2026 a Julho/2026 | **Status:**  Concluído
@@ -82,7 +82,7 @@
 ---
 
 ### Pacote 1.2 – Modelagem e Prototipação (`KAN-9`)
-**Período:** Agosto/2026 a Novembro/2026 | **Status:** 🔄 Em Andamento
+**Período:** Agosto/2026 a Novembro/2026 | **Status:**  Em Andamento
 
 | Código EAP | ID Tarefa | Atividade / Pacote de Trabalho | Período / Data | Responsável Principal | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -132,7 +132,7 @@
 ---
 
 ### Pacote 1.5 – Implantação e Encerramento (`KAN-12`)
-**Período:** A definir | **Status:** ⏳ Pendente
+**Período:** A definir | **Status:**  Pendente
 
 | Código EAP | ID Tarefa | Atividade / Pacote de Trabalho | Período / Data | Responsável Principal | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
