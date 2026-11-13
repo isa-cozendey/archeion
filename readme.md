@@ -74,7 +74,7 @@ O Archeion é uma solução de software desenvolvida para digitalizar, centraliz
 ## Documentação
 
 Toda a documentação técnica e gerencial encontra-se organizada na pasta [`/docs`](./docs):
-* [Plano_de_Projeto](./docs/01-plano-projeto/plano_de_projeto.md)
+* [Plano_de_Projeto](./docs/01-plano-projeto/plano-de-projeto.md)
 * [Termo de Abertura do Projeto (TAP)](./docs/01-plano-projeto/termo_de_abertura_do_projeto.md)
 * [EAP do Projeto](./docs/01-plano-projeto/eap_do_projeto.md)
 * [Mapeamento de Talentos e Habilidades](./docs/01-plano-projeto/mapeamento_de_talentos_e_habilidades.md)
