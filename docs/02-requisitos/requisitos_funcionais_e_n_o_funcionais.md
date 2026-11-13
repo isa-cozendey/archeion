@@ -1,4 +1,4 @@
-# 📌 Requisitos Funcionais e Não-Funcionais – Archeion
+# Requisitos Funcionais e Não-Funcionais – Archeion
 
 **Projeto:** Archeion (`portarias.gestao`)  
 **Instituição:** Instituto Federal Catarinense (IFC) – Campus Videira  
