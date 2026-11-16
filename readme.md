@@ -81,3 +81,4 @@ Toda a documentação técnica e gerencial encontra-se organizada na pasta [`/do
 * [Critérios de aceitação do Projeto](./docs/01-plano-projeto/criterios_de_aceitacao.md)
 * [Requisitos Funcionais e Não-Funcionais](./docs/02-requisitos/requisitos_funcionais_e_n_o_funcionais.md)
 * [Regras de Negócio](./docs/02-requisitos/regras_de_negocios.md)
+* [Protótipo](https://www.figma.com/design/K93yE98i7EnZW65z78vya6/archeion?node-id=0-1&t=3yi44s0IqauGc9aI-1)
